@@ -1,0 +1,13 @@
+<h3>Login Form</h3>
+
+<form (ngSubmit)="login(f)" #f novalidate>
+
+  Email :
+  <input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" required autofocus placeholder="Enter the email"
+  />
+  <br/> Password:
+  <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" required>
+
+  <br/>
+  <button type="submit">Submit</button>
+</form>

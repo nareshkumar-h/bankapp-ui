@@ -1,0 +1,15 @@
+<h3>List of Accounts</h3>
+
+<table border="1">
+<thead><tr><th>Sno</th><th>Account No</th> <th>Account Type</th> <th>Balance</th><th>Action</th></tr></thead>
+<tbody>
+  <tr *ngFor="let a of accounts;let i=index">
+    <td>{{i+1}}</td>
+    <td>{{a.accountId}}</td>
+    <td>{{a.accountType}}</td>
+    <td>{{a.balance}}</td>
+    <a href="" routerLink="{{a.accountId}}"> View</a>
+  </tr>
+</tbody>
+
+</table>

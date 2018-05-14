@@ -1,0 +1,20 @@
+<h3>Account Details</h3>
+<div *ngIf="account">
+    <table border="1">
+        <thead><tr><th>Account No</th> <th>Account Type</th> <th>Balance</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>{{account.accountId}}</td>
+            <td>{{account.accountType}}</td>
+            <td>{{account.balance}}</td>
+          </tr>
+        </tbody>        
+        </table>
+</div>
+
+<h3>Withdrawal Form</h3>
+<form (ngSubmit)="withdraw(f)" #f novalidate>
+Enter the withdraw Amount: 
+<input type="number" name="amount" #amount="ngModel" [(ngModel)] = "account.amount" required >
+<button type="submit">Submit</button>
+</form>
