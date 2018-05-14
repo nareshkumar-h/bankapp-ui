@@ -15,6 +15,6 @@
 <h3>Withdrawal Form</h3>
 <form (ngSubmit)="withdraw(f)" #f novalidate>
 Enter the withdraw Amount: 
-<input type="number" name="amount" #amount="ngModel" [(ngModel)] = "account.amount" required >
+<input type="number" name="amount" #amount="ngModel" [(ngModel)] = "tx.amount" required >
 <button type="submit">Submit</button>
 </form>

@@ -6,12 +6,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AccountService {
 
-  
   url ="http://localhost:8080/";
 
   constructor(private http: HttpClient) { }
 
   list(userId){
+    
     return this.http.get(this.url + "users/"+ userId + "/accounts");
   }
 
@@ -20,6 +20,7 @@ export class AccountService {
   }
 
   withdraw(accountId, account) {
-    return this.http.post(this.url + "accounts/" + account + "/withdraw" , account );
+    var obj = { "accountId": accountId , "transactionAmount": account.amount, "mode":"ONLINE"};
+    return this.http.post(this.url + "accounts/" + accountId + "/withdraw" , obj );
   }
 }
